@@ -167,12 +167,10 @@ actions:
 # MCP Servers Configuration
 mcpServers:
   notion:
-    command: npx
-    args:
-      - "@modelcontextprotocol/server-notion"
-    env:
-      NOTION_API_TOKEN: "${NOTION_API_TOKEN}"
-    timeout: 60000
+    type: streamable-http
+    url: https://api.notion.com/mcp  # if available
+    headers:
+      Authorization: "Bearer ${NOTION_API_TOKEN}"
 
 
 # Definition of custom endpoints
